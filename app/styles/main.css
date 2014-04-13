@@ -1,0 +1,44 @@
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    margin: 0;
+    height: 100%;
+    flex-direction: row;
+    box-sizing: border-box;
+}
+
+.fixed {
+    position: fixed;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.bottom {
+    bottom: 0;
+}
+
+.vertical-flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.fill {
+    flex: 1;
+}
+
+.border-box {
+    box-sizing: border-box;
+}
+
+.no-margin {
+    margin: 0 !important;
+}
+
+.content-section {
+    margin: 0em 1em;
+}
