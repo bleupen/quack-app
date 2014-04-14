@@ -3,11 +3,13 @@ html {
 }
 
 body {
-    display: flex;
     margin: 0;
     height: 100%;
-    flex-direction: row;
     box-sizing: border-box;
+}
+
+header {
+    padding: 1em;
 }
 
 .fixed {
@@ -22,9 +24,16 @@ body {
     bottom: 0;
 }
 
-.vertical-flex {
+.flex {
     display: flex;
+}
+
+.vertical.flex {
     flex-direction: column;
+}
+
+.horizontal.flex {
+    flex-direction: row;
 }
 
 .fill {
@@ -41,4 +50,12 @@ body {
 
 .content-section {
     margin: 0em 1em;
+}
+
+.overflow {
+    overflow: auto;
+}
+
+.borderless.menu {
+    border-radius: 0px;
 }

@@ -1,6 +1,9 @@
 {
   "name": "quack",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "angular": "~1.2.16",
+    "momentjs": "~2.6.0"
+  },
   "devDependencies": {}
 }

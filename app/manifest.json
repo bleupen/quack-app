@@ -1,9 +1,16 @@
 {
-    "name": "__MSG_appName__",
-    "description": "__MSG_appDescription__",
+    "name": "Quack",
+    "description": "Quack chat client",
     "version": "2",
+    "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtSZwxk9lKy20b0yGLhPh51ZqhXgtO/WyRHcXWMjM0sA3ziUtmNpjw+f9QzfxbL9DYXWEa6uaNVCxgvskb76L5SaBw5Xz/yR7XAM9u6zUkB5zguTNTn1Iw6XLVDuhkWy3zTKSHGqTeQ2PoCTWKcY8tRv282Y4mA/2Gl13TwOcYqrGOJD/N0tSgqm4JIrfPMPTbO7T5edPnMWhw3sIOoa011LbXFCYwBry9A81habZ4/b3Af0rTQRfbEQZmAghmrZcjFyxHiP4HOylhbTpHIe//EMKZlIPDmAXduuNbos0HNGkVyD7t/PuudlgVXjyL3yhXulF0xzpfn0b7R57I9U2hQIDAQAB",
     "manifest_version": 2,
     "default_locale": "en",
+    "oauth2": {
+        "client_id": "619186862683-ruvkfri4er379bdc9mn35t2k8ec25bh8.apps.googleusercontent.com",
+        "scopes": [
+            "https://www.googleapis.com/auth/plus.login"
+        ]
+    },
     "permissions": [
         {
             "socket": [
@@ -11,6 +18,7 @@
                 "tcp-connect:*:*"
             ]
         },
+        "identity",
         "app.window",
         "clipboardRead",
         "clipboardWrite",

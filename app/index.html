@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="quack" ng-csp>
 <head>
     <meta charset="utf-8">
     <title>quack</title>
@@ -8,78 +8,60 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
 </head>
-<body>
-<div class="no-margin ui red vertical menu">
-    <a class="item">
-        <i class="chat icon"></i>
-        Feed
-    </a>
-    <a class="item">
-        <i class="users icon"></i>
-        Friends
-    </a>
+<body class="vertical flex" ng-controller="AppCtrl">
+<header class="ui header">{{me.displayName}}</header>
+<div class="horizontal flex fill">
+    <div class="no-margin ui borderless vertical menu">
+        <a class="item">
+            <i class="chat icon"></i>
+            Feed
+        </a>
+        <a class="item">
+            <i class="users icon"></i>
+            Friends
+        </a>
 
-    <div class="item">
-        <i class="meh icon"></i>
-        Emoticons
+        <a class="item">
+            <i class="meh icon"></i>
+            Emoticons
+        </a>
     </div>
-</div>
-<div class="fill vertical-flex content-section">
-    <div class="ui feed fill">
+    <div class="fill vertical flex content-section" ng-controller="ConvoCtrl as conversation">
         <h2 class="ui header">
             Hank Leupen
         </h2>
 
-        <div class="event">
-            <div class="label">
-                <i class="red circular icon">HL</i>
-            </div>
-            <div class="content">
-                <div class="date">
-                    Just moments ago
-                </div>
-                <div class="summary">
-                    Oh Wassairp!
-                </div>
-            </div>
-        </div>
-        <div class="event">
-            <div class="label">
-                <i class="green inverted circular icon">BL</i>
-            </div>
-            <div class="content">
-                <div class="date">
-                    3 days ago
-                </div>
-                <div class="summary">
-                    Naan
+        <div class="ui feed fill overflow">
+            <div qk-scrollto ng-repeat="message in conversation.messages" class="event">
+                <div class="label" qk-avatar="message.sender"></div>
+                <div class="content">
+                    <div class="date">
+                        {{ message.time | date : 'shortTime'}}
+                    </div>
+                    <div class="summary">
+                        {{ message.body }}
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="event">
-            <div class="label">
-                <i class="red circular icon">HL</i>
+        <div class="ui form">
+            <div class="field">
+                <form ng-keypress="conversation.keypress($event)"><textarea ng-model="conversation.message"></textarea>
+                </form>
             </div>
-            <div class="content">
-                <div class="date">
-                    Just moments ago
-                </div>
-                <div class="summary">
-                    Is it bedtime yet? lol
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="ui form">
-        <div class="field">
-            <textarea></textarea>
         </div>
     </div>
 </div>
 <!-- build:js scripts/index.js -->
-<script src="scripts/index.js"></script>
 <script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/semantic-ui/build/packaged/javascript/semantic.js"></script>
+<script src="bower_components/momentjs/moment.js"></script>
+<script src="scripts/index.js"></script>
+<script src="scripts/filters.js"></script>
+<script src="scripts/directives.js"></script>
+<script src="scripts/services.js"></script>
+<script src="scripts/controllers.js"></script>
 <!-- endbuild -->
 </body>
 </html>
