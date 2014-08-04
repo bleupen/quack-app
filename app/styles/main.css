@@ -6,6 +6,7 @@ body {
     margin: 0;
     height: 100%;
     box-sizing: border-box;
+    font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif/*rtl:prepend:"Droid Arabic Kufi","Droid Sans", */;
 }
 
 header {

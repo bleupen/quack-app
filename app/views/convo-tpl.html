@@ -1,0 +1,24 @@
+<h2 class="ui header">
+    Hank Leupen
+</h2>
+
+<div class="ui feed fill overflow">
+    <div qk-scrollto ng-repeat="message in conversation.messages" class="event">
+        <div class="label" qk-avatar="message.sender"></div>
+        <div class="content">
+            <div class="date">
+                {{ message.time | date : 'shortTime'}}
+            </div>
+            <div class="summary">
+                {{ message.body }}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="ui form">
+    <div class="field">
+        <form ng-keypress="conversation.keypress($event)"><textarea ng-model="conversation.message"></textarea>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<div>
+
+    <h2 class="ui header">
+        Friends
+    </h2>
+
+    <div class="ui large list">
+        <a class="item" ng-repeat="friend in friends.friends">
+            <i class="ui green avatar icon user"></i>
+
+            <div class="content">{{friend}}</div>
+        </a>
+    </div>
+    <div class="ui action input">
+        <input type="text" ng-model="friends.searchString" placeholder="Search...">
+        <div class="ui icon button" ng-click="friends.search()"><i class="search icon"></i></div>
+    </div>
+
+    <div class="ui large list">
+        <a class="item" ng-repeat="entry in friends.searchResults.items">
+            <i class="ui green avatar icon user"></i>
+
+            <div class="content">{{entry.displayName}}</div>
+        </a>
+    </div>
+</div>

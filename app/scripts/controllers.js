@@ -1,7 +1,10 @@
 'use strict';
 
 angular.module('quack')
-    .controller('AppCtrl', function(me, $rootScope) {
+    .controller('AppCtrl', function(me, $rootScope, socket) {
+        socket.on('me', function (data) {
+            console.log(data);
+        });
         me.then(function (profile) {
             $rootScope.me = profile;
         });
@@ -22,6 +25,16 @@ angular.module('quack')
             if ($event.keyCode === 13) {
                 this.send();
             }
+        };
+    })
+
+    .controller('FriendsCtrl', function(friends, $http, friendsSearch) {
+        this.friends = friends;
+        var self = this;
+        this.search = function() {
+            friendsSearch(this.searchString).then(function(people) {
+                self.searchResults = people;
+            })
         };
     })
 ;
