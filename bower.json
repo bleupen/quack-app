@@ -5,7 +5,9 @@
     "angular": "~1.2.16",
     "momentjs": "~2.6.0",
     "socket.io-client": "~0.9.16",
-    "angular-ui-router": "~0.2.10"
+    "angular-ui-router": "~0.2.10",
+    "jquery": "~2.1.1",
+    "semantic-ui": "~0.19.0"
   },
   "devDependencies": {}
 }
